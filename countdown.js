@@ -9,18 +9,44 @@
   var el = document.getElementById("countdown");
   if (!el) return;
 
+  var forms = {
+    days: ["день", "дня", "дней"],
+    hours: ["час", "часа", "часов"],
+    minutes: ["минута", "минуты", "минут"],
+    seconds: ["секунда", "секунды", "секунд"],
+  };
+
+  function pluralRu(n, list) {
+    n = Math.abs(Math.floor(n)) % 100;
+    var n1 = n % 10;
+    if (n > 10 && n < 20) return list[2];
+    if (n1 > 1 && n1 < 5) return list[1];
+    if (n1 === 1) return list[0];
+    return list[2];
+  }
+
   function pad(n) {
     return String(n).padStart(2, "0");
   }
 
+  var timerId = null;
+
   function tick() {
     var now = new Date();
-    var ms = target - now;
+    var ms = target.getTime() - now.getTime();
     if (ms <= 0) {
       el.querySelector('[data-unit="days"]').textContent = "0";
       el.querySelector('[data-unit="hours"]').textContent = "0";
       el.querySelector('[data-unit="minutes"]').textContent = "0";
       el.querySelector('[data-unit="seconds"]').textContent = "0";
+      ["days", "hours", "minutes", "seconds"].forEach(function (key) {
+        var label = el.querySelector('[data-unit-label="' + key + '"]');
+        if (label) label.textContent = pluralRu(0, forms[key]);
+      });
+      if (timerId != null) {
+        clearInterval(timerId);
+        timerId = null;
+      }
       return;
     }
     var s = Math.floor(ms / 1000);
@@ -35,8 +61,17 @@
     el.querySelector('[data-unit="hours"]').textContent = pad(hours);
     el.querySelector('[data-unit="minutes"]').textContent = pad(minutes);
     el.querySelector('[data-unit="seconds"]').textContent = pad(seconds);
+
+    el.querySelector('[data-unit-label="days"]').textContent = pluralRu(days, forms.days);
+    el.querySelector('[data-unit-label="hours"]').textContent = pluralRu(hours, forms.hours);
+    el.querySelector('[data-unit-label="minutes"]').textContent = pluralRu(minutes, forms.minutes);
+    el.querySelector('[data-unit-label="seconds"]').textContent = pluralRu(seconds, forms.seconds);
   }
 
   tick();
-  setInterval(tick, 1000);
+  timerId = setInterval(tick, 1000);
+
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) tick();
+  });
 })();

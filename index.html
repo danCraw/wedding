@@ -33,28 +33,30 @@
 
       <main class="page-card">
         <section id="hero" class="block block--hero">
-          <p class="block__eyebrow">С любовью приглашаем</p>
-          <h1 class="block__script">Наша свадьба</h1>
-
-          <figure class="polaroid polaroid--hero">
-            <img src="images/couple-01.png" alt="Лиза и Даниил" width="600" height="800" />
-            <figcaption class="polaroid__names">Даниил &amp; Елизавета</figcaption>
-          </figure>
-
-          <div class="date-split" aria-label="Дата свадьбы: 6 июня 2026">
+          <p class="block__eyebrow">Мы женимся!</p>
+           <div class="date-split" aria-label="Дата свадьбы: 6 июня 2026">
             <span class="date-split__part">06</span>
             <span class="date-split__sep">|</span>
             <span class="date-split__part">06</span>
             <span class="date-split__sep">|</span>
             <span class="date-split__part">2026</span>
           </div>
+
+          <figure class="polaroid polaroid--hero">
+            <img src="images/couple-01.png" alt="Лиза и Даниил" width="600" height="800" />
+            <figcaption class="polaroid__names">Даниил &amp; Елизавета</figcaption>
+          </figure>
+
+
         </section>
 
-        <section class="block block--divider">
-          <p class="block__text">
-            Дорогие родные и друзья! Одно событие в нашей жизни не будет полным без
-            вашего присутствия. Приглашаем вас разделить с нами этот день — будет
-            много радости, тепла и танцев.
+        <section class="block block--invite-intro" aria-labelledby="invite-intro-heading">
+          <h2 id="invite-intro-heading" class="invite-intro__heading">
+            <span class="invite-intro__script">Дорогие гости!</span>
+          </h2>
+          <p class="invite-intro__body">
+            Мы будем счастливы разделить с вами день, наполненный любовью, теплом и радостными моментами.
+С нетерпением ждём вас, чтобы вместе создать воспоминания, которые останутся с нами навсегда.
           </p>
         </section>
 
@@ -63,25 +65,24 @@
           <div class="countdown" id="countdown">
             <div class="countdown__item">
               <span class="countdown__num" data-unit="days">—</span>
-              <span class="countdown__label">дней</span>
+              <span class="countdown__label" data-unit-label="days">дней</span>
             </div>
             <div class="countdown__item">
               <span class="countdown__num" data-unit="hours">—</span>
-              <span class="countdown__label">часов</span>
+              <span class="countdown__label" data-unit-label="hours">часов</span>
             </div>
             <div class="countdown__item">
               <span class="countdown__num" data-unit="minutes">—</span>
-              <span class="countdown__label">минут</span>
+              <span class="countdown__label" data-unit-label="minutes">минут</span>
             </div>
             <div class="countdown__item">
               <span class="countdown__num" data-unit="seconds">—</span>
-              <span class="countdown__label">секунд</span>
+              <span class="countdown__label" data-unit-label="seconds">секунд</span>
             </div>
           </div>
         </section>
 
         <section id="story" class="block">
-          <h2 class="block__title block__title--serif">Моменты для памяти</h2>
           <div class="polaroid-grid polaroid-grid--card">
             <figure class="polaroid">
               <img src="images/couple-02.png" alt="" width="400" height="500" loading="lazy" />
@@ -107,14 +108,11 @@
           </div>
           <h2 class="block__title block__title--serif">Загородный клуб SOMA</h2>
           <p class="block__text">
-            Торжество пройдёт на берегу озера: природа, банкетные площадки и
-            комфорт для гостей. При желании можно остаться в домиках с видом на
-            воду — бронирование на
-            <a href="https://www.soma-hotel.ru/" target="_blank" rel="noopener noreferrer">сайте отеля</a>.
+            Сбор гостей состоится в загородном клубе Soma, при желании можно
+            переночевать в одном из домиков клуба — за подробностями обращайтесь к жениху и невесте.
           </p>
-          <p class="venue-address">
-            Воронежская область, Новоусманский район,<br />
-            Трудовское сельское поселение
+          <p class="block__text block__text--bold">
+            К месту проведения торжества будет организован трансфер, подробности чуть позже…
           </p>
           <a
             class="btn btn--block"
@@ -127,23 +125,22 @@
 
         <section id="program" class="block">
           <h2 class="block__title block__title--serif">Программа дня</h2>
-          <p class="block__subtitle">Предварительно — уточним ближе к дате</p>
           <ul class="timeline">
             <li class="timeline__row">
-              <span class="timeline__time">15:30</span>
+              <span class="timeline__time">15:00</span>
               <span class="timeline__text">Сбор гостей, фуршет</span>
             </li>
             <li class="timeline__row">
-              <span class="timeline__time">16:30</span>
+              <span class="timeline__time">16:000</span>
               <span class="timeline__text">Торжественная церемония</span>
             </li>
             <li class="timeline__row">
-              <span class="timeline__time">18:00</span>
+              <span class="timeline__time">17:00</span>
               <span class="timeline__text">Банкет</span>
             </li>
             <li class="timeline__row">
-              <span class="timeline__time">22:00</span>
-              <span class="timeline__text">Танцы и торт</span>
+              <span class="timeline__time">23:00</span>
+              <span class="timeline__text">Окончание вечера</span>
             </li>
           </ul>
         </section>
@@ -151,7 +148,7 @@
         <section id="palette" class="block block--dress">
           <h2 class="block__title block__title--serif">Дресс-код</h2>
           <p class="block__text">
-            Будем благодарны, если при выборе нарядов вы придержитесь нашей цветовой палитры.
+            Мы очень старались сделать наш праздник красивым и будем благодарны, если при выборе нарядов вы придержитесь нашей цветовой палитры.
           </p>
           <div class="palette-row" aria-label="Цветовая палитра">
             <span class="palette-dot" style="--c: #3d201a" title="Эспрессо"></span>
@@ -164,34 +161,32 @@
         <section class="block">
           <h2 class="block__title block__title--serif">Пожелания</h2>
           <p class="block__text block__text--follow">
-            Просим не дарить цветы: ваше присутствие сделает этот день ярче любого
-            букета.
+            Если хотите подарить нам ценный и нужный подарок, мы будем очень благодарны за вклад в бюджет нашей молодой семьи.
           </p>
           <p class="block__text block__text--follow">
-            Если вы хотите сделать нам дорогой и действительно нужный подарок, мы
-            будем очень благодарны за вклад в бюджет нашей молодой семьи.
+            Пожалуйста, не дарите нам цветы – мы не успеем в полной мере насладиться их красотой,
+              вместо них вы можете порадовать нас бутылкой вина или вашим любимым алкоголем – обещаем открывать
+              их по важным поводам!
           </p>
         </section>
 
         <section id="invite" class="block block--soft">
-          <h2 class="block__title block__title--serif">С любовью</h2>
+          <h2 class="block__title block__title--serif">Чат</h2>
           <p class="block__text">
-            Если остались вопросы — напишите нам в мессенджере. Будем на связи!
+            Мы создали чат для централизованного обмена информацией и сохранения фотографий и видео с торжества.
           </p>
-        </section>
-
-        <section id="rsvp" class="block block--rsvp">
-          <h2 class="block__title block__title--serif">Анкета гостя</h2>
-          <p class="block__text">Подтвердите, пожалуйста, своё участие — нам важно знать число гостей.</p>
-          <a class="btn btn--primary btn--block" href="#" id="rsvp-link">Заполнить анкету</a>
-          <p class="block__hint">Замените ссылку на вашу Google-форму или Тильду.</p>
+          <p class="block__text block__text--follow">
+            Присоединиться:
+            <a href="https://max.ru/join/xpOZgIMyZokR67GsGYDh5UPVHDIOhq2owSMTMelltP8" target="_blank" rel="noopener noreferrer">MAX</a>
+            <span aria-hidden="true"> · </span>
+            <a href="https://t.me/+4XkM3bFUX4FlYmEy" target="_blank" rel="noopener noreferrer">Telegram</a>
+          </p>
         </section>
       </main>
 
       <footer class="site-footer">
         <p>
-          Фон и фото площадки:
-          <a href="https://www.soma-hotel.ru/" target="_blank" rel="noopener noreferrer">soma-hotel.ru</a>
+          <a href="https://www.soma-hotel.ru/" target="_blank" rel="noopener noreferrer"></a>
         </p>
       </footer>
     </div>
